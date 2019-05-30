@@ -1,0 +1,70 @@
+<head>
+<script src="plotly-latest.min.js"></script>
+<script src="csv-generator.js"></script>
+<script src="jquery.min.js"></script>
+<script src="binary_choice.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</script><link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+
+
+<div id="container">
+<div id="sidebar">
+ <h2> Parameters of the model</h2>
+<table>
+<tr><td>\(N\) </td><td><input type="text" id="rn" /></td></tr>
+<tr><td>\(\mu_1\) </td><td><input type="text" id="rmu1"/></td></tr>
+<tr><td>\(\mu_2\) </td><td><input type="text" id="rmu2"/></td></tr>
+<tr><td>\(\theta_1\) </td><td><input type="text" id="rtheta1"/></td></tr>
+<tr><td>\(\theta_2\) </td><td><input type="text" id="rtheta2" /></td></tr>
+<tr><td>\(\alpha_1\) </td><td><input type="text" id="ralpha1"/></td></tr>
+<tr><td>\(\alpha_2\) </td><td><input type="text" id="ralpha2" /></td></tr>
+<tr><td>\(K\) </td><td><input type="text" id="rk" /></td></tr>
+<tr><td>\(m\) </td><td><input type="text" id="rm"/></td></tr>
+</table>
+<h2> Parameters of the simulation</h2>
+
+<table>
+<tr><td>Number of timesteps </td><td><input type="text" id="rtime" /></td></tr>
+<tr><td>Number of simulations </td><td><input type="text" id="rreals" /></td></tr>
+</table>
+<br/>
+<br/>
+<button class="button" onclick="plot()" href="myDiv">Show plot</button>
+<button class="button" onclick="plotstats()">Show stats</button>
+<button class="button" onclick="showdata()">Show data</button>
+<button class="button" onclick="downloaddata()">Download data</button>
+</div>
+
+<div id="content">
+<h1> Binary choice cockroach model</h1>
+<br/>
+
+\(\frac{d X_i}{dt} = \mu _i\left(N - \sum_{j=1}^2 X_j\right) -\frac{\theta_i}{K^m+\left(\alpha_i X_i\right)^m}X_i \quad i=1,2\)
+<br/>
+
+where 
+<br/>
+
+<ul>
+<li>\(X_i\) is the mean number of sheltered individuals on shelter \(i\)</li>
+<li>\(\mu_i\) is the individual probability to join shelter \(i\)</li>
+<li>\(\theta_i\) is the individual probability to leave shelter \(i\)</li>
+<li>\(\alpha_i\) is the inter-atraction in shelter \(i\)</li>
+<li>\(K\) is a threshold value \(i\)</li>
+<li>\(m\) is the cooperativity between individuals</li>
+
+</ul>
+
+<div id="myDiv" style="width: 99%; height: 600px; text-align: center;"></div>
+</div>
+
+</div>
+
+
+
+
+

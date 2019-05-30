@@ -1,0 +1,25 @@
+<head>
+<script src="TeX-AMS-MML_SVG.js"></script>
+
+<script src="plotly-latest.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+</script><link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="row">
+<div class="column">
+<br/> <br/>
+
+Number of individuals : <input type="text" id="xr"  /><br/>
+Probability of success : <input type="text" id="pr" /><br/><br/>
+Calculate probability between <input type="text" id="xr1"  /> and <input type="text" id="xr2"  /> <br/> <br/>
+
+<button onclick="plot()">Show plot</button>
+</div>
+<div class="column">
+<div id="myDiv" style="width: 50%; height: 500px;"></div>
+</div>
+</div>
+</body>
